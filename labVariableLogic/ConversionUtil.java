@@ -22,6 +22,8 @@ public class ConversionUtil {
     private final double lbToKg = 0.45;
     private final double gramToOunce = 0.04;
     private final double ounceToGram = 28.35;
+    private final double literToCup = 4.17;
+    private final double cupToLiter = 0.24;
 
     private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("0.00");
     /**
@@ -68,7 +70,12 @@ public class ConversionUtil {
                 case "oz":
                     output = getMeasurementOutputVal(conversionUnit, conversionVal, ounceToGram , "g");
                     break;
-    
+                case "l":
+                    output = getMeasurementOutputVal(conversionUnit, conversionVal, literToCup , "cups");
+                    break;
+                case "cups":
+                    output = getMeasurementOutputVal(conversionUnit, conversionVal, cupToLiter , "l");
+                    break;
             }
         }
         

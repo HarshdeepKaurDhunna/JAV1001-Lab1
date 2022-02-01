@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class Convert {
     
     //Array to check whether the conversion unit present or not in code 
-    public static String[] unitsToConvert = new String[] {"km", "mi", "cm", "in", "kg", "lb", "g", "oz", "c", "f"};   
+    public static String[] unitsToConvert = new String[] {"km", "mi", "cm", "in", "kg", "lb", "g", "oz", "c", "f", "l", "cups"};   
     
     /**
      * @method Main method
