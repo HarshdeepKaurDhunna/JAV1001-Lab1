@@ -56,7 +56,7 @@ public class Convert {
 
             //Split String to get Numeric value and Conversion Unit
             String inputParts[] = inputVal.split("(?i)(?<=\\d)(?=[a-z])|(?<=[a-z])(?=\\d)");
-            double conversionVal = Float.parseFloat(inputParts[0]) ;
+            float conversionVal = Float.parseFloat(inputParts[0]) ;
             String conversionUnit = inputParts[1] ;
 
             //Check converion unit is entered or not

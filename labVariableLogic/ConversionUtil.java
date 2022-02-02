@@ -32,7 +32,7 @@ public class ConversionUtil {
      * @param conversionVal Value ebtered by user to convert
      * @return Converted Value and Unit
      */
-    public String doConversion(String conversionUnit, double conversionVal) {
+    public String doConversion(String conversionUnit, float conversionVal) {
         String output = "";
 
         // If user temp conversion
@@ -76,6 +76,9 @@ public class ConversionUtil {
                 case "cups":
                     output = getMeasurementOutputVal(conversionUnit, conversionVal, cupToLiter , "l");
                     break;
+                default:
+                    output = "Something went wrong!. Please try again";
+                    break;
             }
         }
         
@@ -90,8 +93,8 @@ public class ConversionUtil {
      * @param conervertedUnit Output Unit
      * @return String i.e 10.0 km is equal to 6.2mi
      */
-    public String getMeasurementOutputVal(String unitToConvrt, double valueToConvrt, double unitsVal, String conervertedUnit) {
-        String outpulVal = String.valueOf(DECIMAL_FORMAT.format(unitsVal * valueToConvrt));
+    public String getMeasurementOutputVal(String unitToConvrt, Float valueToConvrt, double unitsVal, String conervertedUnit) {
+        String outpulVal = String.valueOf(DECIMAL_FORMAT.format(unitsVal * (double)valueToConvrt));
         outpulVal = valueToConvrt + " " + unitToConvrt +  " is equal to " + outpulVal + " " + conervertedUnit;
         return outpulVal;
     }
