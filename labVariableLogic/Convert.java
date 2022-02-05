@@ -59,32 +59,38 @@ public class Convert {
 
             //Split String to get Numeric value and Conversion Unit
             String inputParts[] = inputVal.split("(?i)(?<=\\d)(?=[a-z])|(?<=[a-z])(?=\\d)");
-            float conversionVal = Float.parseFloat(inputParts[0]) ;
-            String conversionUnit = inputParts[1] ;
-
-            //Check converion unit is entered or not
-            if(!conversionUnit.isEmpty() && conversionUnit != null){
-
-                //Convert to lowercase to match the values present in Array
-                conversionUnit = conversionUnit.toLowerCase();
-
-                //Check whether the conversion unit present or not in code
-                boolean containsVal = Arrays.stream(unitsToConvert).anyMatch(conversionUnit::equals);
-
-                if(containsVal){
-
-                    //Instance of util
-                    ConversionUtil conversionUtil = new ConversionUtil();
-
-                    //Call the util Method for conversion
-                    System.out.println(conversionUtil.doConversion(conversionUnit,conversionVal));
+            if(inputParts.length == 2){
+                double conversionVal = Double.parseDouble(inputParts[0]) ;
+                String conversionUnit = inputParts[1] ;
+    
+                //Check converion unit is entered or not
+                if(!conversionUnit.isEmpty() && conversionUnit != null){
+    
+                    //Convert to lowercase to match the values present in Array
+                    conversionUnit = conversionUnit.toLowerCase();
+    
+                    //Check whether the conversion unit present or not in code
+                    boolean containsVal = Arrays.stream(unitsToConvert).anyMatch(conversionUnit::equals);
+    
+                    if(containsVal){
+    
+                        //Instance of util
+                        ConversionUtil conversionUtil = new ConversionUtil();
+    
+                        //Call the util Method for conversion
+                        System.out.println(conversionUtil.doConversion(conversionUnit,conversionVal));
+                    }else{
+                        System.out.print("Please Enter a valid converstion unit");
+                    }
                 }else{
-                    System.out.print("Please Enter a valid converstion unit");
+                    System.out.print("Please Enter a valid converstion unit");  
                 }
             }else{
-                System.out.print("Please Enter a valid converstion unit");  
+                System.out.print("Please Enter a valid value"); 
             }
+            
         }
 }
+
 
 
