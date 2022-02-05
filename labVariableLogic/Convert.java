@@ -41,10 +41,13 @@ public class Convert {
 
             //remove whitespace 
             conversionVal = conversionVal.trim().replaceAll("\\s+","");
-
-            //Method call for conversion
-            getConvertedValue(conversionVal);
             
+            if(!conversionVal.isEmpty() && conversionVal != null){
+                //Method call for conversion
+                getConvertedValue(conversionVal);
+            }else{
+                System.out.print("Please Enter a valid value");  
+            }
         }
 
         /**
